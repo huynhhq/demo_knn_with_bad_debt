@@ -61,21 +61,55 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            table, th, td{
+                border:1px solid #ccc;
+            }
+            table{
+                border-collapse:collapse;
+            }
+            tr:hover{
+                background-color:#ddd;
+                cursor:pointer;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height">            
             <div class="content">
+                <a href="/chuan-hoa-giao-dich">
+                    <button>Back</button>
+                </a>
                 <div class="title m-b-md">
-                    Welcome to Huynh Bank
+                    Transaction Detail
                 </div>
 
-                <div class="links">
-                    <a href="/import-du-lieu">Import data</a>
-                    <a href="/du-lieu-giao-dich">Transaction Data</a>
-                    <a href="/chuan-hoa-giao-dich">Standardized Transaction Data</a>
-                    <a href="/them-giao-dich">New Transaction</a>                    
-                </div>
+                <table>
+                    <thead>
+                        <th>K</th>
+                        <th>User ID</th>
+                        <th>Bad Debt = 0</th>
+                        <th>Bad Debt = 1</th>                        
+                    </thead>
+                    <tbody>
+                        @foreach( $data_show as $item )
+                            <tr>
+                                <td>
+                                    {{ $item->k_number }}
+                                </td>
+                                <td>
+                                    {{ $item->user }}
+                                </td>
+                                <td>
+                                    {{ $item->bad_debt_0 }}
+                                </td>
+                                <td>
+                                    {{ $item->bad_debt_1 }}
+                                </td>                               
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>

@@ -64,18 +64,43 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height">            
             <div class="content">
+                <a href="/">
+                    <button>Back</button>
+                </a>
                 <div class="title m-b-md">
-                    Welcome to Huynh Bank
+                    Import Data
                 </div>
 
-                <div class="links">
-                    <a href="/import-du-lieu">Import data</a>
-                    <a href="/du-lieu-giao-dich">Transaction Data</a>
-                    <a href="/chuan-hoa-giao-dich">Standardized Transaction Data</a>
-                    <a href="/them-giao-dich">New Transaction</a>                    
-                </div>
+                <form id="import-form" 
+                    class="form-horizontal form-simple steps"                                 
+                    action="{{url('/import-transaction')}}"
+                    method="post" 
+                    accept-charset="UTF-8" 
+                    enctype="multipart/form-data" 
+                    novalidate="novalidate">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">                    
+                    <div class="form-group">
+                        <fieldset class="form-group">   
+                            <input type="file" 
+                                name="file" 
+                                class="form-control"
+                                required="required" 
+                                data-rule-required="true" 
+                                data-msg-required="Xin chọn file csv."
+                                > 
+                            <span id="file-span-error1" class="error1" style="display: none;">
+                                <i class="error-log fa fa-exclamation-triangle"></i>                        
+                            </span>
+                        </fieldset>                                  
+                    </div>                                
+                    <div class="form-actions right">
+                        <button type="submit" name="up" id="up" class="btn btn-primary btn-lg">
+                            Import
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </body>
