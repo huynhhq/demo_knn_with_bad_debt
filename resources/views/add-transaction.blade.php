@@ -91,8 +91,8 @@
                         <fieldset class="form-group">   
                             <label>Gender</label>
                             <select name="sl-gender">
-                                <option value="Nam">Male</option>
-                                <option value="Nữ">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </fieldset>                                  
                     </div>                                

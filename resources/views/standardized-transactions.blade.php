@@ -134,7 +134,7 @@
                                 <td>
                                     @if( $transaction->k_number != 0 )
                                         <a href="chi-tiet-giao-dich/{{ $transaction->id }}">
-                                            <button> Chi tiết</button>
+                                            <button> Detail</button>
                                         </a>
                                     @else
                                         Sample Data
